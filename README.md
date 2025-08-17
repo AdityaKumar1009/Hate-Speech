@@ -1,29 +1,26 @@
-# Hate Speech Detection Web App 🚀
+# 🛡️ Hate Speech Detection Web App  
 
-This project is a **Flask-based web application** for detecting hate speech in text using a fine-tuned Transformer model.  
-The model can classify text into multiple categories such as **Toxic, Severe Toxic, Obscene, Threat, Insult, and Identity Hate**.
-
----
-
-## ✨ Features
-- 🧠 Fine-tuned Transformer model (Hugging Face)  
-- 🎨 Simple and interactive web interface (HTML + CSS + Bootstrap)  
-- 📊 Shows probability distribution across all classes  
-- ✅ Highlights the **final prediction** clearly  
+This project is a **Hate Speech Detection system** trained on **Kaggle's Jigsaw Toxic Comment Challenge dataset**.  
+The model is fine-tuned using Transformers and then integrated into a **Flask web application** to provide real-time predictions.  
 
 ---
 
-## 📂 Repository Structure
-- `app.py` → Flask backend  
-- `templates/index.html` → Frontend web template  
-- `final_model/` → Trained model and tokenizer files  
-- `requirements.txt` → Dependencies for easy setup  
+## 📖 Project Workflow
+1. **Training**  
+   - The model is trained in [`Toxic_Comments.ipynb`](./Toxic_Comments.ipynb)  
+   - Dataset: [Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)  
+   - Labels:  
+     - Toxic  
+     - Severe Toxic  
+     - Obscene  
+     - Threat  
+     - Insult  
+     - Identity Hate  
 
----
+2. **Model Saving**  
+   - After training, the model and tokenizer are saved inside the `final_model/` folder.  
 
-## 🚀 Installation & Setup
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/hate-speech-detection.git
-cd hate-speech-detection
+3. **Web Application**  
+   - The trained model is loaded into [`app.py`](./app.py)  
+   - A **Flask backend** powers the classification API  
+   - A simple **HTML frontend** (`templates/index.html`) provides an interactive interface  
